@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>YT Playlist Builder</title>
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+<main>
+  <h1>YT Playlist Builder</h1>
+  <p class="tagline">Turn a pasted list of songs into a YouTube playlist on your own account.</p>
+
+  <p class="links">
+    <a href="https://chromewebstore.google.com/detail/yt-playlist-builder/eopbnbiemenhnolmjmpgnlklbodbopmn">Install from the Chrome Web Store</a>
+    <a href="https://github.com/Skymask000/YTPlaylistBuilder">Source code</a>
+    <a href="privacy.html">Privacy policy</a>
+  </p>
+
+  <h2>What it does</h2>
+  <p>
+    Paste a song list, either as <code>Artist - Song</code> lines or as numbered artist blocks. The
+    extension finds a video for each entry, shows you every match in a table, and lets you untick
+    anything it got wrong. Only then does it create the playlist, or add the songs to a playlist you
+    already own.
+  </p>
+
+  <h2>How it works</h2>
+  <ul>
+    <li>Video search reads the public YouTube results page directly, so it uses no API quota.</li>
+    <li>Playlist creation and additions use the YouTube Data API on your own account, and only when you click to add.</li>
+    <li>Searching and adding continue in the background, so you can close the popup and come back to it.</li>
+    <li>Nothing is sent to any server other than Google's own. There are no analytics and no tracking.</li>
+  </ul>
+
+  <h2>Permissions</h2>
+  <p>
+    Signing in uses Google's standard consent screen and grants the
+    <code>https://www.googleapis.com/auth/youtube</code> scope, which is what allows a playlist to be
+    created and videos added to it. The extension reads your playlist list and channel name to show
+    you which account you are signed into, and writes only to the playlist you selected. It never
+    reads your watch history, subscriptions or comments, and never deletes anything. You can revoke
+    access at any time from
+    <a href="https://myaccount.google.com/permissions">your Google account permissions</a>.
+  </p>
+
+  <h2>Support</h2>
+  <p>
+    Questions, bugs and feature requests:
+    <a href="https://github.com/Skymask000/YTPlaylistBuilder/issues">open an issue on GitHub</a>
+    or email <a href="mailto:skymask000@gmail.com">skymask000@gmail.com</a>.
+  </p>
+
+  <footer><a href="../">All extensions</a></footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy - YT Playlist Builder</title>
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="tagline">YT Playlist Builder. Last updated: 2026-09-10.</p>
+
+  <h2>Summary</h2>
+  <p>
+    YT Playlist Builder is a browser extension that turns a pasted list of songs into a YouTube
+    playlist on your own YouTube account. It runs entirely in your browser and communicates only with
+    Google's own services (Google Sign-In and the YouTube Data API v3). It has no third-party
+    servers, no analytics, no telemetry, and does not collect, transmit or share personal data with
+    anyone other than Google, which you are already signed in to.
+  </p>
+
+  <h2>Data the extension accesses</h2>
+  <p>
+    To function, the extension needs limited access to your Google account, granted through Google's
+    OAuth 2.0 consent flow. You see Google's standard consent screen listing exactly what access is
+    being granted, and can revoke it at any time from
+    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+  </p>
+  <p>The extension uses one OAuth scope, <code>https://www.googleapis.com/auth/youtube</code>, and within it performs only these operations on your behalf:</p>
+  <ul>
+    <li><strong>Read the list of playlists you own</strong>, to populate the "Add to existing playlist" dropdown.</li>
+    <li><strong>Read your channel name and avatar</strong>, to display which account is currently signed in.</li>
+    <li><strong>Create a new playlist</strong>, only when you choose "Create new" and click to add.</li>
+    <li><strong>Add videos to a playlist</strong>, only when you click to add, inserting one item per checked row.</li>
+  </ul>
+  <p>
+    The extension does not read your watch history, subscriptions, comments or any other YouTube
+    data. It does not modify or delete anything you did not explicitly request through the popup. It
+    does not read or modify data belonging to any account other than the signed-in one.
+  </p>
+
+  <h2>Data the extension stores</h2>
+  <p>
+    All data is stored locally in your browser using Chrome's <code>chrome.storage.local</code> API.
+    Nothing is transmitted to any server other than Google's own OAuth and YouTube API endpoints.
+  </p>
+  <ul>
+    <li><strong>OAuth access token</strong>, a short-lived credential (typically about an hour) received from Google after sign-in, cached to avoid re-prompting on every action.</li>
+    <li><strong>Signed-in account identity</strong>, the YouTube channel name and avatar URL, so the popup can show which account is in use without re-fetching.</li>
+    <li><strong>In-progress run state</strong>, the pasted song list, the per-song matches, the selection state of each row and the insertion progress, so a run survives closing the popup or restarting the browser and can be resumed.</li>
+  </ul>
+  <p>You can clear all locally stored data at any time by clicking <strong>Sign out</strong> in the popup (token and identity), clicking <strong>Reset</strong> (run state), or removing the extension from <code>chrome://extensions/</code> (everything).</p>
+
+  <h2>Data the extension does not collect or transmit</h2>
+  <ul>
+    <li>No browsing history</li>
+    <li>No YouTube watch history, subscription list or comments</li>
+    <li>No IP addresses</li>
+    <li>No cookies</li>
+    <li>No usage analytics or telemetry</li>
+    <li>No crash reports</li>
+    <li>No personally identifiable information beyond what the OAuth flow itself involves, which is between you and Google, not the developer</li>
+  </ul>
+
+  <h2>Third parties</h2>
+  <p>The extension makes network requests to only two categories of endpoint:</p>
+  <ul>
+    <li><strong>Google Sign-In</strong> (<code>accounts.google.com</code>), via <code>chrome.identity.launchWebAuthFlow</code>. Standard OAuth 2.0.</li>
+    <li><strong>YouTube Data API v3</strong> (<code>www.googleapis.com/youtube/v3/*</code>), for the operations listed above.</li>
+  </ul>
+  <p>No requests are made to any developer-controlled server, third-party analytics service or other external system.</p>
+
+  <h2>YouTube search results</h2>
+  <p>
+    To find candidate videos without consuming YouTube Data API quota, the extension fetches the
+    public YouTube search results page (<code>youtube.com/results</code>) and parses video metadata
+    from the returned HTML. This is a read-only, unauthenticated request. No user data is sent, and
+    no cookies are attached beyond what the browser sends to youtube.com by default. The response is
+    not stored or transmitted anywhere; only the parsed video IDs and titles populate the match table
+    in the popup.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>Any change will be reflected on this page with an updated date, and noted in the extension's version notes on the Chrome Web Store.</p>
+
+  <h2>Contact</h2>
+  <p>
+    <a href="mailto:skymask000@gmail.com">skymask000@gmail.com</a><br />
+    Source code: <a href="https://github.com/Skymask000/YTPlaylistBuilder">github.com/Skymask000/YTPlaylistBuilder</a>
+  </p>
+
+  <footer><a href="../">All extensions</a> &middot; <a href="./">YT Playlist Builder</a></footer>
+</main>
+</body>
+</html>
